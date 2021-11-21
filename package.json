@@ -1,0 +1,25 @@
+{
+  "name": "Backend systemu do zarzadzania obron prac dyplomowych",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000S\u0000D\u0000O\u0000P\u0000D\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sergiiio98/SDOPD.git"
+  },
+  "keywords": [],
+  "author": "Alan Kazek & Tomasz Fitał",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sergiiio98/SDOPD/issues"
+  },
+  "homepage": "https://github.com/Sergiiio98/SDOPD#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
+  }
+}
