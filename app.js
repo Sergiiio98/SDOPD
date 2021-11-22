@@ -2,6 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+// routes import
+const userRoutes = require('./routes/user');
+
 // app
 const app = express();
 
@@ -15,10 +18,8 @@ mongoose
 
 
 
-// routes
-app.get('/', (req, res) => {
-    res.send("Hello from node ;)")
-});
+// routes middleware
+app.use("/api", userRoutes);
 
 const port = process.env.P0RT || 8000;
 
