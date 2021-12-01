@@ -1,25 +1,37 @@
 const express = require('express');
 const mongoose = require('mongoose');
-require('dotenv').config();
+
+const dotenv = require('dotenv');
+dotenv.config()
+
 
 // routes import
 const userRoutes = require('./routes/user');
+const subjectRoutes = require('./routes/subject');
 
 // app
 const app = express();
 
 // db
 
-mongoose
-    .connect(process.env.DATABASE, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true 
-        }).then(()=> console.log("DB connected"));
+const connectDB = async () => {
+    await mongoose.connect(
+        process.env.MONGO_URI,
+        {useNewUrlParser: true}
+    )
+    .then(() => console.log('DB Connected'))
+    
+    mongoose.connection.on('error', err => {
+        console.log(`DB connection error: ${err.message}`)
+    });
 
+}
 
+connectDB();
 
 // routes middleware
 app.use("/api", userRoutes);
+app.use("/api", subjectRoutes);
 
 const port = process.env.P0RT || 8000;
 
