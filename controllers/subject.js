@@ -8,4 +8,15 @@ exports.getSubjects = async (req, res) => {
     console.log(users);
     res.send(users);
 
+    // const csvFilePath='./subjects.csv';
+    // const csv=require('csvtojson');
+    // csv()
+    // .fromFile(csvFilePath)
+    // .then((jsonObj)=>{
+    //     console.log(jsonObj);
+    //     res.send(jsonObj);
+
+    // })
+    
+
 };
