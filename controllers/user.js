@@ -14,6 +14,11 @@ exports.sayHi = async (req, res) => {
     .fromFile(csvFilePath)
     .then((jsonObj)=>{
         console.log(jsonObj);
+        jsonObj = jsonObj.map(it => {
+           it.idList = it.idList.split(", ");
+           return it;
+        })
+        console.log(jsonObj);
         res.send(jsonObj);
 
     })
