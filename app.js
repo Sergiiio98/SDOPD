@@ -10,10 +10,11 @@ dotenv.config()
 const userRoutes = require('./routes/user');
 const subjectRoutes = require('./routes/subject');
 const questionRoutes = require('./routes/question');
+const randQuestionRoutes = require('./routes/randQuestions');
 
 // app
 const app = express();
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -40,6 +41,7 @@ connectDB();
 app.use("/api", userRoutes);
 app.use("/api", subjectRoutes);
 app.use("/api/question", questionRoutes);
+app.use("/api", randQuestionRoutes);
 
 const port = process.env.P0RT || 8000;
 

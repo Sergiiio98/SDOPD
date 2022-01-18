@@ -5,6 +5,7 @@ const Question = require('../models/question');
 
 exports.createQuestion = async (req, res) => {
     const { body } = req;
+    console.log(body);
 
     if (!body || !body.name || !body.answer || !body.subjectId) {
         res.send({
@@ -13,6 +14,7 @@ exports.createQuestion = async (req, res) => {
         });
         return;
     }
+
     const { name, answer, subjectId } = body;
 
     const question = new Question({ name, answer, subjectId });
@@ -20,6 +22,7 @@ exports.createQuestion = async (req, res) => {
         res.send({
             status: 200,
             message: "Success",
+            body: body,
         })
     });
 };
