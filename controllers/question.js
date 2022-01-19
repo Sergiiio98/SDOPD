@@ -4,9 +4,8 @@ const Question = require('../models/question');
 
 
 exports.createQuestion = async (req, res) => {
-    const { body } = req;
-    console.log(body);
-
+    let { body } = req;
+    console.log(body)
     if (!body || !body.name || !body.answer || !body.subjectId) {
         res.send({
             status: 400,
